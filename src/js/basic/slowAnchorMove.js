@@ -1,7 +1,7 @@
-const slowmotion = (link, upSelector, topScrolling) => {
-  const links = document.querySelectorAll(link);
-  const upElem = document.querySelector(upSelector);
+const slowmotion = (link) => {
 
+  const links = document.querySelectorAll(link);
+  console.log(links)
 
   for (let anchor of links){
       anchor.addEventListener('click', (e) => {
@@ -15,16 +15,6 @@ const slowmotion = (link, upSelector, topScrolling) => {
       });
   }
 
-  //! проявляє елемент при скролі до певної відстані
-  window.addEventListener('scroll', () => {
-    if(document.documentElement.scrollTop > topScrolling) {
-      upElem.classList.add('animated', 'fadeIn');
-      upElem.classList.remove('fadeOut');
-    } else {
-      upElem.classList.add('fadeOut');
-      upElem.classList.remove('fadeIn');
-    }
-  });
 };
 
 export default slowmotion;

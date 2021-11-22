@@ -9,9 +9,16 @@
   font-style: #{$style};
   }
 }
+* {font-family: 'Poppins', sans-serif;}
 @import 'basic/fonts.scss';
 @import 'basic/ibg.scss';
 @import 'basic/null.scss';
 @import 'basic/variables.scss';
 @import 'basic/mixins.scss';
 @import 'basic/adaptive_properties.scss';
+
+@import 'modules/container.scss';
+@import 'modules/main.scss';
+@import 'modules/menu.scss';
+@import 'modules/header.scss';
+@import 'modules/button.scss';
