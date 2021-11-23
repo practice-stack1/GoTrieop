@@ -1,7 +1,7 @@
 .button{
   background: linear-gradient(129.54deg, #FF7B4E 15.57%, #FF584E 95.03%);
   border-radius: 27px;
-  display: flex;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
@@ -38,11 +38,20 @@
     height: 49px;
     padding: 13px 43px;
     border-radius: 100px;
+    @media(max-width: 876px){
+      min-width: 100px;
+      padding: 13px 30px;
+    }
   }
   &_l{
     min-width: 263px;
     height: 91px;
     padding: 26px 47px;
+    span{
+      font-weight: 600;
+      font-size: 25px;
+      line-height: 37px;
+    }
   }
   &_m{
     min-width: 223px;

@@ -3942,6 +3942,47 @@ handlePrototype(DOMTokenListPrototype, 'DOMTokenList');
 
 /***/ }),
 
+/***/ "./node_modules/core-js/modules/web.timers.js":
+/*!****************************************************!*\
+  !*** ./node_modules/core-js/modules/web.timers.js ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var $ = __webpack_require__(/*! ../internals/export */ "./node_modules/core-js/internals/export.js");
+var global = __webpack_require__(/*! ../internals/global */ "./node_modules/core-js/internals/global.js");
+var apply = __webpack_require__(/*! ../internals/function-apply */ "./node_modules/core-js/internals/function-apply.js");
+var isCallable = __webpack_require__(/*! ../internals/is-callable */ "./node_modules/core-js/internals/is-callable.js");
+var userAgent = __webpack_require__(/*! ../internals/engine-user-agent */ "./node_modules/core-js/internals/engine-user-agent.js");
+var arraySlice = __webpack_require__(/*! ../internals/array-slice */ "./node_modules/core-js/internals/array-slice.js");
+
+var MSIE = /MSIE .\./.test(userAgent); // <- dirty ie9- check
+var Function = global.Function;
+
+var wrap = function (scheduler) {
+  return function (handler, timeout /* , ...arguments */) {
+    var boundArgs = arguments.length > 2;
+    var args = boundArgs ? arraySlice(arguments, 2) : undefined;
+    return scheduler(boundArgs ? function () {
+      apply(isCallable(handler) ? handler : Function(handler), this, args);
+    } : handler, timeout);
+  };
+};
+
+// ie9- setTimeout & setInterval additional parameters fix
+// https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#timers
+$({ global: true, bind: true, forced: MSIE }, {
+  // `setTimeout` method
+  // https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#dom-settimeout
+  setTimeout: wrap(global.setTimeout),
+  // `setInterval` method
+  // https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#dom-setinterval
+  setInterval: wrap(global.setInterval)
+});
+
+
+/***/ }),
+
 /***/ "./node_modules/webpack/buildin/global.js":
 /*!***********************************!*\
   !*** (webpack)/buildin/global.js ***!
@@ -3982,20 +4023,36 @@ module.exports = g;
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var core_js_modules_web_timers_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/web.timers.js */ "./node_modules/core-js/modules/web.timers.js");
+/* harmony import */ var core_js_modules_web_timers_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_timers_js__WEBPACK_IMPORTED_MODULE_0__);
+
+
 var fixMenu = function fixMenu(menu_selector) {
   var menu = document.querySelector(menu_selector);
   var lastScrollPos = 0;
   window.addEventListener('scroll', function (e) {
     var currentScrollPos = window.pageYOffset;
 
-    if (currentScrollPos > lastScrollPos) {
-      menu.style.position = 'absolute';
+    if (currentScrollPos > window.innerHeight) {
+      menu.classList.add('_fix');
+      menuPosition(currentScrollPos);
     } else {
-      menu.style.position = 'fixed';
+      menu.classList.remove('_fix');
+      menu.classList.remove('_down');
+    }
+  });
+
+  function menuPosition(cur) {
+    if (cur > lastScrollPos) {
+      menu.classList.remove('_down');
+    } else {
+      setTimeout(function () {
+        menu.classList.add('_down');
+      }, 100);
     }
 
-    lastScrollPos = currentScrollPos;
-  });
+    lastScrollPos = cur;
+  }
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (fixMenu);
