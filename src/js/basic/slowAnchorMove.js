@@ -1,7 +1,6 @@
 const slowmotion = (link) => {
 
   const links = document.querySelectorAll(link);
-  console.log(links)
 
   for (let anchor of links){
       anchor.addEventListener('click', (e) => {

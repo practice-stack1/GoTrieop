@@ -1,6 +1,9 @@
 .menu{
   min-width: 537px;
   padding: 0 30px;
+  @media(max-width: 876px){
+    min-width: 100%;
+  }
   &__items{
     display: flex;
     justify-content: space-between;

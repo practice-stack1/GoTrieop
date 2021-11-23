@@ -1,0 +1,37 @@
+.slider{
+  &__wrapper{
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+  &__swiper{
+    height: 100%;
+    padding: 0 95px 0 0;
+    @media(max-width: 1700px){
+      padding: 0 50px 0 0;
+    }
+  }
+  &__swiper-wrapper{
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+  &__swiper-slide{
+    transition: width 0.3s ease, height 0.3s ease;
+    width: 295px;
+    height: 353px;
+    img{
+      width: 100%;
+      border-radius: 45px;
+    }
+    &.swiper-slide-active{
+      height: 480px!important;
+      width: 400px!important;
+      @media(max-width: 1700px){
+        height: 450px!important;
+        width: 370px!important;
+      }
+
+    }
+  }
+}
