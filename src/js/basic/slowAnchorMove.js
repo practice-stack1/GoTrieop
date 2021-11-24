@@ -11,8 +11,10 @@ const slowmotion = (link) => {
               behavior: 'smooth',
               block: 'start'
           });
+    
       });
   }
+
 
 };
 

@@ -20,10 +20,13 @@ integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4
             <span></span>
           </div>
           <div class="header__logo">
-            <a href="#">GoTrieop</a>
+            <a href="#home">GoTrieop</a>
           </div>
           <div class="header__menu menu">
             <div class="menu__overlay">
+              <div class="menu__close">
+                <span></span>
+              </div>
               <nav>
                 <ul class="menu__items">
                   <li class="menu__item">
@@ -46,7 +49,7 @@ integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4
         </div>
       </div>
     </header>
-    <section class="main parallax">
+    <section class="main parallax" id="home">
       <div class="container">
         <div class="main__wrapper">
           <div class="main__content">
@@ -74,7 +77,7 @@ integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4
         </div>
       </div>
     </section>
-    <section class="destination">
+    <section class="destination" id="about">
       <div class="destination__wrapper">
         <div class="destination__content">
           <div class="destination__text">About</div>
@@ -103,7 +106,7 @@ integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4
         </div>
       </div>
     </section>
-    <section class="customer">
+    <section class="customer" id="reviews">
       <div class="container">
         <div class="customer__wrapper">
           <div class="customer__media">
@@ -128,16 +131,10 @@ integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4
                 <div class="stars__descr">Very satisfying service makes it comfortable, a beautiful place in the world. </div>
                 <form action="#" class="stars form_stars">
                   <div class="form__item">
-                    <div class="rating rating_set">
+                    <div class="rating rating_set" data-rating="3">
                       <div class="rating__body">
                         <div class="rating__active"></div>
-                        <div class="rating__items">
-                          <input type="radio" class="rating__item" value="1" name="rating">
-                          <input type="radio" class="rating__item" value="2" name="rating">
-                          <input type="radio" class="rating__item" value="3" name="rating">
-                          <input type="radio" class="rating__item" value="4" name="rating">
-                          <input type="radio" class="rating__item" value="5" name="rating">
-                        </div>
+
                       </div>
                     </div>
                   </div>
@@ -148,6 +145,67 @@ integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4
         </div>
       </div>
     </section>
+    <section class="explore">
+      <div class="container">
+        <div class="explore__wrapper">
+          <div class="explore__content">
+            <div class="explore__title title">
+              Prepare Yourself And <br>
+                Start Exploring With Us.
+            </div>
+            <div class="explore__subtitle title-sub">
+              There's the best discount for you today.
+            </div>
+            <div class="explore__btn button button_m"><span>Get Started</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="subscribe" id="subscribe">
+      <div class="container">
+        <div class="subscribe__wrapper">
+          <div class="subscribe__title title">Subscribe <br> To Our Newsletter</div>
+          <div class="subscribe__email email">
+            <form action="#" class="email__form">
+              <div class="email__input-wrapper">
+                <input type="email" class="email__input" placeholder="Yourmail@mail.com">
+                <div class="email__btn button button_l"><span>Subscribe</span></div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__wrapper">
+          <div class="footer__logo">
+            <a href="#home">GoTrieop</a>
+          </div>
+          <div class="footer__menu">
+            <div class="footer__overlay">
+              <nav>
+                <ul class="footer__items">
+                  <li class="footer__item">
+                    <a href="#home" class="footer__link"><span>Home</span></a>
+                  </li>
+                  <li class="footer__item">
+                    <a href="#about" class="footer__link"><span>About</span></a>
+                  </li>
+                  <li class="footer__item">
+                    <a href="#reviews" class="footer__link"><span>Reviews</span></a>
+                  </li>
+                  <li class="footer__item">
+                    <a href="#subscribe" class="footer__link"><span>Subscribe</span></a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+          <div class="footer__btn button button_s"><span>Login</span></div>
+        </div>
+      </div>
+    </footer>
   </main>
   <script src="js/script.js"></script>
 </body>

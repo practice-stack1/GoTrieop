@@ -10,7 +10,6 @@ const mobMenu = (trigger_selector, menu_selector, menu_item, active_class) => {
   });
   menu.addEventListener('click', (e) => {
     let target = e.target;
-    console.log(target);
     if(target.closest(menu_item) || !target.closest('.menu__overlay')){
       removeActiveClass(active_class);
     }

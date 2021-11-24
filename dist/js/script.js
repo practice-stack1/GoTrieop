@@ -16721,7 +16721,6 @@ var mobMenu = function mobMenu(trigger_selector, menu_selector, menu_item, activ
   });
   menu.addEventListener('click', function (e) {
     var target = e.target;
-    console.log(target);
 
     if (target.closest(menu_item) || !target.closest('.menu__overlay')) {
       removeActiveClass(active_class);
@@ -16807,6 +16806,36 @@ window.onload = function () {
     });
   }
 };
+
+/***/ }),
+
+/***/ "./src/js/basic/rating.js":
+/*!********************************!*\
+  !*** ./src/js/basic/rating.js ***!
+  \********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var rating = function rating(data, active_selector) {
+  var rating = document.querySelector(data).dataset.rating,
+      active = document.querySelector(active_selector);
+  setrating(rating, active);
+
+  function setrating(rating, active) {
+    if (rating > 5) {
+      rating = 5;
+    } else if (rating < 0) {
+      rating = 0;
+    }
+
+    var counter = rating * 20;
+    active.style.cssText = "width:".concat(counter, "%");
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (rating);
 
 /***/ }),
 
@@ -16939,6 +16968,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _basic_fixMenu__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./basic/fixMenu */ "./src/js/basic/fixMenu.js");
 /* harmony import */ var _basic_mouse_parallax__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./basic/mouse-parallax */ "./src/js/basic/mouse-parallax.js");
 /* harmony import */ var _basic_swiperConfig__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./basic/swiperConfig */ "./src/js/basic/swiperConfig.js");
+/* harmony import */ var _basic_rating__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./basic/rating */ "./src/js/basic/rating.js");
+
 
 
 
@@ -16948,6 +16979,7 @@ window.addEventListener('DOMContentLoaded', function () {
   Object(_basic_mobileMenu__WEBPACK_IMPORTED_MODULE_0__["default"])('.header__burger', '.menu', '.menu .menu__item', '_active');
   Object(_basic_slowAnchorMove__WEBPACK_IMPORTED_MODULE_1__["default"])('[href^="#"]');
   Object(_basic_fixMenu__WEBPACK_IMPORTED_MODULE_2__["default"])('.header');
+  Object(_basic_rating__WEBPACK_IMPORTED_MODULE_5__["default"])('[data-rating]', '.rating__active');
 });
 
 /***/ })
