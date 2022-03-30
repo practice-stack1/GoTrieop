@@ -1,35 +1,25 @@
-@mixin font($font_name, $file_name, $weight, $style) {
-  @font-face {
-  font-family: $font_name;
-  font-display: swap;
-  src: local('#{$file_name}'),
-      url("../fonts/#{$file_name}.woff") format("woff"),
-      url("../fonts/#{$file_name}.woff2") format("woff2");
-  font-weight: #{$weight};
-  font-style: #{$style};
-  }
+* {
+    font-family: "Poppins", sans-serif;
 }
-* {font-family: 'Poppins', sans-serif;}
-@import 'basic/fonts.scss';
-@import 'basic/ibg.scss';
-@import 'basic/null.scss';
-@import 'basic/variables.scss';
-@import 'basic/mixins.scss';
-@import 'basic/adaptive_properties.scss';
+@import "basic/ibg.scss";
+@import "basic/null.scss";
+@import "basic/variables.scss";
+@import "basic/mixins.scss";
+@import "basic/adaptive_properties.scss";
 
-@import 'modules/title.scss';
+@import "modules/title.scss";
 
-@import 'modules/container.scss';
-@import 'modules/main.scss';
-@import 'modules/menu.scss';
-@import 'modules/header.scss';
-@import 'modules/button.scss';
-@import 'modules/destination.scss';
-@import 'modules/slider.scss';
-@import 'modules/customer.scss';
-@import 'modules/user.scss';
-@import 'modules/stars.scss';
-@import 'modules/explore.scss';
-@import 'modules/subscribe.scss';
-@import 'modules/email.scss';
-@import 'modules/footer.scss';
+@import "modules/container.scss";
+@import "modules/main.scss";
+@import "modules/menu.scss";
+@import "modules/header.scss";
+@import "modules/button.scss";
+@import "modules/destination.scss";
+@import "modules/slider.scss";
+@import "modules/customer.scss";
+@import "modules/user.scss";
+@import "modules/stars.scss";
+@import "modules/explore.scss";
+@import "modules/subscribe.scss";
+@import "modules/email.scss";
+@import "modules/footer.scss";
